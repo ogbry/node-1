@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "product_name": "BC Beanie",
+    "price": 7.03,
+    "img_url": "https://assets.bigcartel.com/product_images/225130150/IMG_6561.JPG"
+  },
+  {
+    "id": 2,
+    "product_name": "BC Hat",
+    "price": 6.72,
+    "img_url": "https://assets.bigcartel.com/product_images/212438563/IMG_1263.JPG"
+  },
+  {
+    "id": 3,
+    "product_name": "BC Shirt",
+    "price": 0.01,
+    "img_url": "https://assets.bigcartel.com/product_images/154156375/2015-03-10_13.57.18.jpg"
+  },
+  {
+    "id": 4,
+    "product_name": "BC Socks",
+    "price": 1.51,
+    "img_url": "https://assets.bigcartel.com/product_images/215231476/IMG_1956.JPG"
+  },
+  {
+    "id": 5,
+    "product_name": "BC Water Bottle",
+    "price": 9.1,
+    "img_url": "https://assets.bigcartel.com/product_images/166717411/waterbottle_copy.JPG"
+  },
+  {
+    "id": 6,
+    "product_name": "BC Hoodie",
+    "price": 1.51,
+    "img_url": "https://assets.bigcartel.com/product_images/223162987/IMG_5902.JPG"
+  },
+  {
+    "id": 7,
+    "product_name": "BC Hat - Other",
+    "price": 8.99,
+    "img_url": "https://assets.bigcartel.com/product_images/215232499/IMG_1964.JPG"
+  },
+  {
+    "id": 8,
+    "product_name": "BC Lanyard",
+    "price": 7.6,
+    "img_url": "https://assets.bigcartel.com/product_images/192866269/devmtnshop_%2821_of_25%29.jpg"
+  }
+]
