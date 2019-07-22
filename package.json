@@ -1,0 +1,23 @@
+{
+  "name": "node-1",
+  "version": "1.0.0",
+  "description": "In this project we're going to build the backend service (API) for an ecommerce site. We'll be able to display products, search for products, and retrieve a specific product. There will be some accelerator content at the end to help add additional challenges.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ogbry/node-1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ogbry/node-1/issues"
+  },
+  "homepage": "https://github.com/ogbry/node-1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
