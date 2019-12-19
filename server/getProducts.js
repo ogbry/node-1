@@ -58,7 +58,7 @@ function deleteProduct(req, res){
         products.splice(item, 1)
         }
         else{
-                console.log('Id not found')
+                res.status(404).json({error: 'ID not found'})
         }
         })
 
