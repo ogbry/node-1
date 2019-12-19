@@ -31,12 +31,24 @@ app.patch('/api/products/edit/:id', function(req, res){
 })
 app.delete('/api/products/delete/:id', function(req, res){
 	let index = parseInt(req.params.id)
+
+	products.forEach(item => {
+
+	if(index === item.id){
 	const item = products.indexOf(products.find( x => {
 		if(x.id == index){
+			console.log(x)
 			return x
 		}
 	}))
 	products.splice(item, 1)
+	}
+	else{
+		console.log('Id not found')
+	}
+	})
+
+	
 })
 
 app.listen( port, (error) => {  console.log(`Server is listening on port ${port} c((•ω•))ɔ`)  })
