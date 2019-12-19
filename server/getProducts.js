@@ -1,17 +1,15 @@
 const products = require('../products.json')
 
 function getProducts(req, res){
-  console.log(req.query)
-  
-  if(req.query.price){
-     if(req.query.price){
-       const product = products.filter(
-         item => item.price == req.query.price
-       )
-	return res.status(200).send(product)
-     }
-  }
-  res.status(200).send(products)
+	if(req.query.price){
+     		if(req.query.price){
+       		const product = products.filter(
+         	item => item.price == req.query.price
+       	)
+		return res.status(200).send(product)
+     	}
+ 	 }
+ 	res.status(200).send(products)
 }
 
 function getProductById(req, res){
@@ -22,8 +20,18 @@ function getProductById(req, res){
 }
 
 function postProduct(req, res){
-  	products.push(req.body)
-	res.status(200).json(products)
+	
+	const findItem = products.filter(item => {
+		return item.product_name == req.body.product_name
+	})
+	console.log(findItem.length)
+	if(findItem.length <= 0){
+		products.push(req.body)
+                res.status(200).json(products)
+	}
+	else{
+		res.status(409).json({error: 'Already have this item'})
+	}
 }
 
 function editProduct(req, res){
