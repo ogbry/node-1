@@ -17,15 +17,22 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.get('/api/products', getProduct.getProducts)
 app.get('/api/products/:id', getProduct.getProductById) 
 app.post('/api/products/add', function(req, res){ 
-	
+
 	console.log(req.body) 
-        return res.status(200).json(req.body)
+	
+	products.push(req.body)
+	
+        res.status(200).json(products)
      })
-
-app.listen( port, (error) => {
-
-  console.log(`Server is listening on port ${port}`)
-
+app.patch('/api/products/edit/:id', function(req, res){
+	
+	products.forEach(item => {
+	 if(parseInt(req.params.id) === item.id){
+		item.product_name = req.body.product_name,
+		item.price = req.body.price ? req.body.price : item.price
+		item.img_url = req.body.img_url ? req.body.img_url : item.img_url
+	 }
+	})
 })
 
-
+app.listen( port, (error) => {  console.log(`Server is listening on port ${port}`) })
