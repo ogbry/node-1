@@ -19,4 +19,5 @@ app.get('/api/products/:id', getProduct.getProductById)
 app.post('/api/products/add', getProduct.postProduct)
 app.patch('/api/products/edit/:id', getProduct.editProduct)
 app.delete('/api/products/delete/:id', getProduct.deleteProduct)
+
 app.listen( port, (error) => {  console.log(`Server is listening on port ${port} c((•ω•))ɔ`)  })
