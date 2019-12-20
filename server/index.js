@@ -1,6 +1,7 @@
 const express = require('express')
 
 const bodyParser = require('body-parser')
+const newUUID = require('uuid/v1');
 const getProduct = require('./getProducts')
 const products = require('../products.json')
 
@@ -20,4 +21,5 @@ app.post('/api/products/add', getProduct.postProduct)
 app.patch('/api/products/edit/:id', getProduct.editProduct)
 app.delete('/api/products/delete/:id', getProduct.deleteProduct)
 
-app.listen( port, (error) => {  console.log(`Server is listening on port ${port} c((•ω•))ɔ`)  })
+app.listen( port, (error) => {  console.log(`Server is listening on port ${port} c((•ω•))ɔ`)
+})

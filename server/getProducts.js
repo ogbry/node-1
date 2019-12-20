@@ -1,4 +1,5 @@
 const products = require('../products.json')
+const newUUID = require('uuid/v1');
 
 function getProducts(req, res){
 	if(req.query.price){
@@ -20,17 +21,20 @@ function getProductById(req, res){
 }
 
 function postProduct(req, res){
-	
+	let init = 0
+	const counter =  products.map(item=> {return init++})
 	const findItem = products.filter(item => {
 		return item.product_name == req.body.product_name
 	})
-	console.log(findItem.length)
 	if(findItem.length <= 0){
-		products.push(req.body)
+		products.push({
+			id: init+1,
+			...req.body
+		})
                 res.status(200).json(products)
 	}
 	else{
-		res.status(409).json({error: 'Already have this item'})
+		res.status(409).json({Error: 'Already have this item'})
 	}
 }
 
@@ -46,22 +50,22 @@ function editProduct(req, res){
 
 function deleteProduct(req, res){
 	let index = parseInt(req.params.id)
+	const findItem = products.filter(item => {
+		return index == item.id
+	})
 
-        products.forEach(item => {
-
-        if(index === item.id){
-        const item = products.indexOf(products.find( x => {
-                if(x.id == index){
-                        return x
-                }
-        }))
-        products.splice(item, 1)
-        }
-        else{
-                res.status(404).json({error: 'ID not found'})
-        }
-        })
-
+	if(findItem.length <= 0){
+		res.status(409).json({Error: 'ID not found'})
+	}
+	else{
+		const item = products.indexOf(products.find( x => {
+                	if(x.id == index){
+                        	return x
+	                }
+       		 }))
+		products.splice(item, 1)
+		res.status(200).json({Message: 'Deleted', Item: index})
+	}
 }
 
 module.exports = {
